@@ -1,5 +1,6 @@
 #!/home/chr/sys/bin/python
 # -*- coding: utf-8 -*-
+# Copyright (c) 2013, Christoph Reimann 
 
 crystalExe = '/home/chr/sys/bin/Pcrystal09'
 crystalVersion = 'CRYSTAL09 v2.0.1'
