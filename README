@@ -1,31 +1,37 @@
-
-Prerequites
-===========
+Prerequisites
+=============
 - Python 2.6.5 or later (3.x untested)
 - Minuit2 (http://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/)
 - pyminuit (http://code.google.com/p/pyminuit/)
 - CRYSTAL code (http://www.crystalsolutions.eu/)
-  note: you can adjust the script to work with other quantum chemistry program packages as well
-        by deriving a new optimizer class from base class BSOptimizer
+  note: you can adjust the script to work with other quantum chemistry 
+        program packages as well by deriving a new optimizer 
+        from base class BSOptimizer
 
 Usage
 =====
 - Adjust variables at the top of Pcrystal09_bsopt.py:
   crystalExe, crystalVersion, mpi, copyCmd, grepCmd. 
-- You need a crystal input that optimally only comes with modest computational demands.
-  In order to turn this input into a template file, designate variables to be optimized 
-  with the notation ${...} (see e.g. scf3_bsopt.template). 
-  Exponents should start with the letter 'a' (this is important for constraints to work properly), 
-  coefficients with the letter 'd', the remaining letters and numbers are arbitrary. 
+- You need a crystal input that optimally only comes with modest 
+  computational demands.
+  In order to turn this input into a template file, designate variables 
+  to be optimized with the notation ${...} (see e.g. scf3_bsopt.template). 
+  Exponents should start with the letter 'a' (this is important 
+  for constraints to work properly), coefficients with the letter 'd', 
+  the remaining letters and numbers are arbitrary. 
 - You will need to supply a fort.20 file from a previous single point calculation. 
-  (Use the '-i' command line option for Pcrystal09_bsopt.py to remove the variable tags from the template.)
-- Run Pcrystal_bsopt.py by specifying the template file (-t option) and the guess (-g option). 
+  (Use the '-i' command line option for Pcrystal09_bsopt.py 
+  to remove the variable tags from the template.)
+- Run Pcrystal_bsopt.py by specifying the template file (-t option) and 
+  the guess (-g option). 
 
 Hints
 =====
-- Use simple systems that ideally can be calculated using conventional SCF settings (omit SCFDIRECT keyword). 
+- Use simple systems that ideally can be calculated using conventional SCF settings 
+  (i.e. omit SCFDIR keyword). 
 - Use as few k points as possible. 
-- Try to optimize a subset of variables first, e.g. start with contraction coefficients only. 
+- Try to optimize a subset of variables first, e.g. start with contraction 
+  coefficients only. 
 
 
  
